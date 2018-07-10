@@ -30,6 +30,14 @@ const api = Object.create({}, {
             })
         }
     },
+    deleteMovie:{
+        value: function(movieId){
+            return $.ajax({
+                url: `http://localhost:3000/movies/${movieId}`,
+                type: "DELETE"
+            })
+        }
+    },
     newMovie:{
         value: function(movieTitle, movieDesc, movieDuration){
             return $.ajax({

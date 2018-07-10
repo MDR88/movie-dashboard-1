@@ -27,7 +27,7 @@ const movieWall = Object.create({},{
                         })
                         editBtn.click(e =>{
                             const targetId = e.target.parentNode.id
-                            const movieTitle = $(`title${targetId}`).text()
+                            const movieTitle = $(`#title${targetId}`).text()
                             const movieDesc = $(`#desc${targetId}`).text()
                             const movieDur = $(`#dur${targetId}`).text()
                             this.editMovieInfo(targetId, movieTitle, movieDesc, movieDur)
@@ -53,13 +53,22 @@ const movieWall = Object.create({},{
     },
     editMovieInfo: {
         value: function (targetId, movieTitle, movieDesc, movieDur){
+            $("#edit-btn").remove()
+            $("#delete-btn").remove()
+            const submitBtn = $("<button>Submit</button>")
             const titleEdit = $(`<input type='text' value='${movieTitle}'>`)
             const descEdit = $(`<input type='text' value='${movieDesc}'>`)
             const durEdit = $(`<input type='text' value='${movieDur}'>`)
             $(`#title${targetId}`).append(titleEdit)
             $(`#desc${targetId}`).append(descEdit)
             $(`#dur${targetId}`).append(durEdit)
-            api.editMovieInfo(targetId, movieTitle, movieDesc, movieDur)
+            $(`#${targetId}`).append(submitBtn)
+            submitBtn.click(() =>{
+                api.editMovie(targetId, titleEdit.val(), descEdit.val(), durEdit.val()).then(response =>{
+                    this.buildMovieWall()
+                })
+
+            })
         }
     }
 })
