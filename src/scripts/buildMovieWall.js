@@ -19,7 +19,7 @@ const movieWall = Object.create({},{
                         let movieDur = $(`<p id='dur${movie.id}'>${movie.duration}</p>`)
                         const deleteBtn = $(`<button id='delete-btn${movie.id}'>Delete Movie</button>`)
                         const editBtn = $(`<button id='edit-btn${movie.id}'>Edit Details</button>`)
-                        const watchedCheck = $("<input type='checkbox' value='watched'>")
+                        const watchedCheck = $("<input type='checkbox' value='watched'>Mark As Watched</input>")
                         watchedCheck.click(e => {
                             console.log(e.target.nextSibling)
                             const targetId = e.target.parentNode.id
