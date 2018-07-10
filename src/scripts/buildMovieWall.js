@@ -55,7 +55,7 @@ const movieWall = Object.create({},{
         value: function (targetId, movieTitle, movieDesc, movieDur){
             $(`#edit-btn${targetId}`).remove()
             $(`#delete-btn${targetId}`).remove()
-            const submitBtn = $("<button>Submit</button>")
+            const submitBtn = $("<input type='button' value='Submit'>")
             const titleEdit = $(`<input type='text' value='${movieTitle}'>`)
             const descEdit = $(`<input type='text' value='${movieDesc}'>`)
             const durEdit = $(`<input type='text' value='${movieDur}'>`)
@@ -67,7 +67,34 @@ const movieWall = Object.create({},{
                 api.editMovie(targetId, titleEdit.val(), descEdit.val(), durEdit.val()).then(response =>{
                     this.buildMovieWall()
                 })
-
+            })
+            titleEdit.keyup((e) => {
+                if (e.keyCode === 13){
+                    api.editMovie(targetId, titleEdit.val(), descEdit.val(), durEdit.val()).then(response => {
+                        this.buildMovieWall()
+                    })
+                }
+            })
+            descEdit.keyup((e) => {
+                if (e.keyCode === 13) {
+                    api.editMovie(targetId, titleEdit.val(), descEdit.val(), durEdit.val()).then(response => {
+                        this.buildMovieWall()
+                    })
+                }
+            })
+            durEdit.keyup((e) => {
+                if (e.keyCode === 13) {
+                    api.editMovie(targetId, titleEdit.val(), descEdit.val(), durEdit.val()).then(response => {
+                        this.buildMovieWall()
+                    })
+                }
+            })
+            submitBtn.keyup((e) => {
+                if (e.keyCode === 13) {
+                    api.editMovie(targetId, titleEdit.val(), descEdit.val(), durEdit.val()).then(response => {
+                        this.buildMovieWall()
+                    })
+                }
             })
         }
     },
