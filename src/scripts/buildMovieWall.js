@@ -55,7 +55,7 @@ const movieWall = Object.create({},{
         value: function (targetId, movieTitle, movieDesc, movieDur){
             $(`#edit-btn${targetId}`).remove()
             $(`#delete-btn${targetId}`).remove()
-            const submitBtn = $("<input type='button' value='Submit'>")
+            const submitBtn = $("<input type='button' value='Submit' id='edit-submit-btn'>")
             const titleEdit = $(`<input type='text' value='${movieTitle}'>`)
             const descEdit = $(`<input type='text' value='${movieDesc}'>`)
             const durEdit = $(`<input type='text' value='${movieDur}'>`)

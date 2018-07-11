@@ -1,59 +1,71 @@
 #main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #movie-wall-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .movie-container {
-    margin: 20px;
-    border: 2px solid black;
-    box-shadow: 3px 2px 2px grey;
-    width: 25vw;
-    padding: 20px;
-    border-radius: 5px;
-    background: rgb(205, 222, 255);
+  margin: 20px;
+  border: 2px solid black;
+  box-shadow: 3px 2px 2px grey;
+  width: 25vw;
+  padding: 20px;
+  border-radius: 5px;
+  background: rgb(205, 222, 255);
 }
 button {
-    outline: none;
-    border-radius: 15px;
-    background-color: coral;
-    color: white;
-    border: none;
-    font-size: 1.2rem;
-    margin: 5px;
-    transition: .3s;
-    align-self: center;
+  outline: none;
+  border-radius: 15px;
+  background-color: coral;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  margin: 5px;
+  transition: 0.3s;
+  align-self: center;
+}
+#edit-submit-btn {
+  outline: none;
+  border-radius: 15px;
+  background-color: coral;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  margin: 5px;
+  transition: 0.3s;
+  align-self: center;
 }
 button:hover {
-    background-color: turquoise;
-    font-size: 1.3rem;
+  background-color: turquoise;
+  font-size: 1.3rem;
 }
 
 #new-movie-btn {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 input {
-    outline: none;
+  outline: none;
+  margin-left: 8px;
 }
 
 h1 {
-    font-size: 6em;
-    font-style: bold;
-    text-shadow: 1px 1px .5px black;
-    text-align: center;
-    width: 100%;
-    border-bottom: .5px dashed black;
-    color: turquoise;
+  font-size: 6em;
+  font-style: bold;
+  text-shadow: 1px 1px 0.5px black;
+  text-align: center;
+  width: 100%;
+  border-bottom: 0.5px dashed black;
+  color: turquoise;
 }
 
-input[checkbox]{
-    width: 10px;
-    height: auto;
+input[checkbox] {
+  width: 10px;
+  height: auto;
 }
